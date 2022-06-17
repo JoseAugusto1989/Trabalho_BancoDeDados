@@ -1,0 +1,44 @@
+
+CREATE TABLE Funcionarios (
+    Id_Funcionario Integer PRIMARY KEY,
+    Nome_Funcionario Varchar(40),
+    CPF Varchar(15),
+    Telefone Varchar(16)
+);
+
+CREATE TABLE Banco (
+    Id Integer PRIMARY KEY,
+    Nome_Banco Varchar(40),
+    CNPJ Integer
+);
+
+CREATE TABLE Clientes (
+    Id_Cliente Integer PRIMARY KEY,
+    Nome_Cliente Varchar(40),
+    CPF Varchar(15),
+    Telefone Varchar(16),
+    Endereco Varchar(40)
+);
+
+CREATE TABLE Conta_Bancaria (
+    Id_Usuario_Func Integer PRIMARY KEY,
+    Agencia Integer,
+    Conta Integer,
+    Id_Usuario_Client Integer
+);
+ 
+ALTER TABLE Funcionarios ADD CONSTRAINT FK_Funcionarios_2
+    FOREIGN KEY (Id_Funcionario)
+    REFERENCES Banco (Id);
+ 
+ALTER TABLE Clientes ADD CONSTRAINT FK_Clientes_2
+    FOREIGN KEY (Id_Cliente)
+    REFERENCES Banco (Id);
+ 
+ALTER TABLE Conta_Bancaria ADD CONSTRAINT FK_Conta_Bancaria_2
+    FOREIGN KEY (Id_Usuario_Func)
+    REFERENCES Funcionarios (Id_Funcionario);
+ 
+ALTER TABLE Conta_Bancaria ADD CONSTRAINT FK_Conta_Bancaria_3
+    FOREIGN KEY (Id_Usuario_Client)
+    REFERENCES Clientes (Id_Cliente);
