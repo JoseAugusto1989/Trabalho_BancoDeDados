@@ -6,7 +6,7 @@ CREATE TABLE Banco (
     CNPJ Varchar(26)
 );
 
-CREATE TABLE Conta Bancaria (
+CREATE TABLE Conta_Bancaria (
     Id_Conta Integer PRIMARY KEY,
     CPF_Cliente Integer,
     Nome_Cliente Varchar(40),
@@ -15,14 +15,14 @@ CREATE TABLE Conta Bancaria (
 
 CREATE TABLE Movimentos (
     Id_Cliente Integer PRIMARY KEY,
-    Tipos_Movimentação Varchar(20),
+    Tipos_Movimentacao Varchar(20),
     Valor Double
 );
  
-ALTER TABLE Conta Bancaria ADD CONSTRAINT FK_Conta Bancaria_2
+ALTER TABLE Conta_Bancaria ADD CONSTRAINT FK_Conta_Bancaria_2
     FOREIGN KEY (Id_Conta)
     REFERENCES Banco (Id);
  
-ALTER TABLE Conta Bancaria ADD CONSTRAINT FK_Conta Bancaria_3
+ALTER TABLE Conta_Bancaria ADD CONSTRAINT FK_Conta_Bancaria_3
     FOREIGN KEY (CPF_Cliente)
     REFERENCES Movimentos (Id_Cliente);
