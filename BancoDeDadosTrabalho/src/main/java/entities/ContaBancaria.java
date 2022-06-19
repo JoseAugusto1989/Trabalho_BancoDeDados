@@ -31,6 +31,10 @@ public class ContaBancaria implements Serializable {
 		this.nomeCliente = nomeCliente;
 		this.saldoConta = saldoConta;
 	}
+	
+	public ContaBancaria() {
+		
+	}
 
 	public int getIdConta() {
 		return idConta;
@@ -44,7 +48,7 @@ public class ContaBancaria implements Serializable {
 		return cpfCliente;
 	}
 
-	public void setCpfCliente(int cpfCliente) {
+	public void setCpfCliente (int cpfCliente) {
 		this.cpfCliente = cpfCliente;
 	}
 
@@ -66,8 +70,10 @@ public class ContaBancaria implements Serializable {
 
 	@Override
 	public String toString() {
-		return "ContaBancaria [idConta=" + idConta + ", cpfCliente=" + cpfCliente + ", nomeCliente=" + nomeCliente
-				+ ", saldoConta=" + saldoConta + "]";
+		return " \n******************************************************************"
+				+ "\n ContaBancaria \n IdConta: " + idConta + ", \n CPF Cliente: " + cpfCliente + ", \n nome Cliente: " + nomeCliente
+				+ ", \n Saldo da Conta=" + saldoConta + " \n"
+				+ "****************************************************************** \n";
 	}
 	
 }

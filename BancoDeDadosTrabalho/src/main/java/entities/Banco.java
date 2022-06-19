@@ -27,6 +27,10 @@ public class Banco implements Serializable {
 		this.nome = nome;
 		this.cnpj = cnpj;
 	}
+	
+	public Banco() {
+		
+	}
 
 	public int getId() {
 		return id;

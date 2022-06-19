@@ -28,6 +28,10 @@ public class Movimentos implements Serializable {
 		this.tiposMovimentacao = tiposMovimentacao;
 		this.valor = valor;
 	}
+	
+	public Movimentos() {
+		
+	}
 
 	public int getIdCliente() {
 		return idCliente;
