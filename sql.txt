@@ -1,28 +1,31 @@
 
 
-CREATE TABLE Banco (
-    Id Integer PRIMARY KEY,
-    Nome Varchar(40),
-    CNPJ Varchar(26)
+CREATE TABLE Detalhes (
+    Id_usuario Serial PRIMARY KEY,
+    Nome_usuario Varchar(30),
+    CPF_usuario Varchar(20),
+    Telefone_usuario Varchar(20),
+    Conta_fk Integer
 );
 
-CREATE TABLE Conta_Bancaria (
-    Id_Conta Integer PRIMARY KEY,
-    CPF_Cliente Integer,
-    Nome_Cliente Varchar(40),
-    Saldo_Conta Double
+CREATE TABLE Conta (
+    Numero_conta Serial PRIMARY KEY,
+    Agencia Varchar(10),
+    Saldo Double
 );
 
 CREATE TABLE Movimentos (
-    Id_Cliente Integer PRIMARY KEY,
-    Tipos_Movimentacao Varchar(20),
-    Valor Double
+    Id_Mov_Usuario Serial PRIMARY KEY,
+    CPF_Recebente Varchar(30),
+    Valor Double,
+    Tipo_Movimento Varchar(30),
+    Conta_fk Integer
 );
  
-ALTER TABLE Conta_Bancaria ADD CONSTRAINT FK_Conta_Bancaria_2
-    FOREIGN KEY (Id_Conta)
-    REFERENCES Banco (Id);
+ALTER TABLE Detalhes ADD CONSTRAINT FK_Detalhes_1
+    FOREIGN KEY (Conta_fk)
+    REFERENCES Conta (Numero_conta);
  
-ALTER TABLE Conta_Bancaria ADD CONSTRAINT FK_Conta_Bancaria_3
-    FOREIGN KEY (CPF_Cliente)
-    REFERENCES Movimentos (Id_Cliente);
+ALTER TABLE Movimentos ADD CONSTRAINT FK_Movimentos_2
+    FOREIGN KEY (Conta_fk)
+    REFERENCES Conta (Numero_conta);
