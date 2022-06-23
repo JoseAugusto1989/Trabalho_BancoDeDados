@@ -15,6 +15,18 @@ public class StartApp {
 		conta.createConta();
 		detalhe.createDetalhes();
 		movi.createMovimentos();
+		
+		conta.deleteConta();
+		detalhe.deleteDetalhes();
+		movi.deleteMovimentos();
+		
+		conta.updateConta();
+		detalhe.updateDetalhes();
+		movi.updateMovimentos();
+		
+		conta.findByIdConta();
+		detalhe.findByIdDetalhes();
+		movi.findByIdMovimentos();
 
 	}
 

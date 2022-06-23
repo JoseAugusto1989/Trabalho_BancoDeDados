@@ -30,7 +30,7 @@ public class Movimentos {
 	
 	@Column(name="conta_fk")
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="conta_fk")
+	@JoinColumn(name="conta_fk2")
 	private Conta contaFk2;
 
 	

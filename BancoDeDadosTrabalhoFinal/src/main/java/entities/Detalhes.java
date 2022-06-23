@@ -29,19 +29,19 @@ public class Detalhes {
 	
 	@OneToOne
 	@JoinColumn(name="conta_fk")
-	@Column(name="conta_fk")
-	private Conta conta_fk1;
+	@Column(name="conta_fk1")
+	private Conta contaFk;
 	
 	public Detalhes() {
 		
 	}
 
-	public Detalhes(long idUsuario, String nomeUsuario, String cpfUsuario, String telefone, Conta conta_fk1) {
+	public Detalhes(long idUsuario, String nomeUsuario, String cpfUsuario, String telefone, Conta contaFk) {
 		this.idUsuario = idUsuario;
 		this.nomeUsuario = nomeUsuario;
 		this.cpfUsuario = cpfUsuario;
 		this.telefone = telefone;
-		this.conta_fk1 = conta_fk1;
+		this.contaFk = contaFk;
 	}
 
 	public long getIdUsuario() {
@@ -76,18 +76,18 @@ public class Detalhes {
 		this.telefone = telefone;
 	}
 
-	public Conta getConta_fk() {
-		return conta_fk1;
+	public Conta getContaFk() {
+		return contaFk;
 	}
 
-	public void setConta_fk(Conta conta_fk) {
-		this.conta_fk1 = conta_fk;
+	public void setConta_fk(Conta contaFk) {
+		this.contaFk = contaFk;
 	}
 
 	@Override
 	public String toString() {
 		return "Detalhes [idUsuario=" + idUsuario + ", nomeUsuario=" + nomeUsuario + ", cpfUsuario=" + cpfUsuario
-				+ ", telefone=" + telefone + ", conta_fk=" + conta_fk1 + "]";
+				+ ", telefone=" + telefone + ", conta_fk=" + contaFk + "]";
 	}
 
 }
